@@ -1,0 +1,36 @@
+<h2>Create a new Match</h2>
+
+
+
+<form id= "form" class="" action="/matches" method="post">
+
+  <label for="match-name-input">Match Name</label>
+  <input id="match-name-input" type="text" name="matchNewName" value="">
+
+
+  <label for="match-type-input">Match Type</label>
+  <input id="match-type-input" type="text" name="matchNewType" value="">
+
+  <label for="match-image-input"> Match Image URL </label>
+  <input  id="match-image-input" type="text" name="matchImage" />
+  <br />
+
+
+  <%# <label for="match-players-input">Players</label>
+  <input id="match-players-input" type="text" name="signupPlayers" value="">%>
+
+  <div id="dynamicInput">
+     Player 1<br><input type="text" name="signupPlayers">
+  </div>
+  <input type="button" value="Add another text input" onClick="addInput('dynamicInput');">
+
+
+
+  <button>Create Match</button>
+</form>
+
+
+<p>
+  choose a previous match
+  <a href="/matches"><=back</a>
+</p>

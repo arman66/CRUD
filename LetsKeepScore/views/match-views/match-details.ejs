@@ -1,0 +1,18 @@
+<h2>Match details</h2>
+
+<h3> <%= matchDetails.matchName %> </h3>
+
+<p> TYPE: <%= matchDetails.matchType %> </p>
+
+<p> <%= matchDetails.matchPlayers %> </p>
+
+<img src="<%= matchDetails.matchPhoto %>" />
+
+
+
+
+<p>Back to my Matches
+  <a href="/matches/<%=matchDetails._id%>/edit">
+    Edit
+<a href="/matches">Back</a>
+</p>

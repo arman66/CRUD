@@ -1,0 +1,24 @@
+<h2>lets signup your team</h2>
+
+
+<% if (typeof(errorMessage) != "undefined") { %>
+  <div class="error-message"><%= errorMessage %></div>
+<% } %>
+
+
+<form id= "form" class="" action="process-signup" method="post">
+
+  <label for="team-name-input">Team Name</label>
+  <input id="team-name-input" type="text" name="signupTeamName" value="">
+
+
+  <label for="password-input">Password</label>
+  <input id="password-input" type="password" name="signupPassword" value="">
+
+
+  <button>Sign Up</button>
+</form>
+<p>
+  already have and account?
+  <a href="/login">Log in</a>
+</p>

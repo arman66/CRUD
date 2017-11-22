@@ -1,0 +1,35 @@
+<h2>Edit your match here</h2>
+
+<!-- weird if statement with "typeof" to avoid an error -->
+<% if (typeof validationErrors !== "undefined") { %>
+  <ul class="error">
+    <!-- we cant do a forEach loop because "validationErrors" is an object -->
+
+    <% for (let field in validationErrors) { %>
+      <li> <%= validationErrors[field].message %> </li>
+    <% } %>
+  </ul>
+<% } %>
+
+
+<form method="post" action="/matches/<%= matchDetails._id %>">
+  <label for="match-name-input"> Match Name: </label>
+  <input  id="match-name-input" type="text"
+      name="matchName" value="<%= matchDetails.matchName %>" />
+  <br />
+  <label for="match-type-input"> Match Type</label>
+  <input  id="match-type-input" type="text"
+      name="matchType" value="<%= matchDetails.matchType %>" />
+  <br />
+
+  <label for="match-image-input"> Match Photo </label>
+  <input  id="match-image-input" type="text"
+      name="matchPhoto" value="<%= matchDetails.matchPhoto %>" />
+  <br />
+  <label for="match-players-input"> Match Players </label>
+  <input  id="match-players-input" type="text"
+      name="matchPlayers" value="<%= matchDetails.matchPlayers %>" />
+  <br />
+
+  <button> Save Changes </button>
+</form>

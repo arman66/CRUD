@@ -1,0 +1,29 @@
+<h2>here are your matches</h2>
+
+<%if(currentUser){%>
+  <p>Hello , <%=currentUser.teamName%></p>
+<%}%>
+
+<a href="matches/new">Create new Match</a>
+
+<ul>
+  <% listOfMatches.forEach((oneMatch) => { %>
+    <li>
+      <h3> <%= oneMatch.matchName %> </h3>
+      <p> <%= oneMatch.matchPlayers %> </p>
+      <img src="<%= oneMatch.matchPhoto %>" />
+
+      <ul>
+        <li>
+          <a href="/matches/details/<%= oneMatch._id %>">
+            View Details
+          </a>
+          <a href="/matches/<%= oneMatch._id %>/edit">
+            Edit
+          </a>
+        </li>
+
+        </ul>
+      </ul>
+</li>
+<% }) %>

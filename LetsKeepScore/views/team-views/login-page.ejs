@@ -1,0 +1,24 @@
+<h2>lets login your team</h2>
+
+
+
+<% if (typeof(errorMessage) != "undefined") { %>
+  <div class="error-message"><%= errorMessage %></div>
+<% } %>
+
+
+<form id="form" class="" action="/process-login" method="post">
+
+  <label for="team-name-input">Team Name</label>
+  <input id="team-name-input" type="text" name="loginTeamName" value="">
+
+  <label for="password-input">Password</label>
+  <input id="password-input" type="password" name="loginPassword" value="">
+
+  <button>Log In</button>
+</form>
+
+<p>
+  dont have and account?
+  <a href="/signup"> Sign Up</a>
+</p>
