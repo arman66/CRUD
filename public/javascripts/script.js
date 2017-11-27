@@ -3,6 +3,7 @@ console.log('connected');
 
   $(document).ready(() => {
   $(".dropdown-button").dropdown();
+  $('.carousel.carousel-slider').carousel({fullWidth: true});
   });
 
 var counter = 0;
@@ -13,7 +14,7 @@ function addInput(divName){
      }
      else {
           var newdiv = document.createElement('div');
-          newdiv.innerHTML = "Player " + (counter + 1) + " <br><input type='text' name='signupPlayers'> - has <input type='number' name='playerPoints'> points";
+          newdiv.innerHTML = "Player " + (counter + 1) + " <br><input type='text' name='signupPlayers[][name]'> - has <input type='number' name='signupPlayers[][points]'> points";
           document.getElementById(divName).appendChild(newdiv);
 
 

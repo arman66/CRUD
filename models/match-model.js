@@ -17,13 +17,11 @@ const matchSchema= new Schema(
       type: String,
       required: [true, 'tell us your match type']
     },
-    matchPlayers:
-    {name: [{ type: String}],
-
-    points:{ type: Number, default: 0}
-
-      },
-
+    matchPlayers:[
+      {
+        name: { type: String},
+        points:{ type: Number, default: 0}
+    }],
     matchPhoto:
     {
       type: String,

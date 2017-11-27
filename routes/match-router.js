@@ -18,7 +18,7 @@ console.log('================',req.user._id);
   {owner: req.user._id}
   )
   .limit(25)
-  .sort({ dateAdded: -1 })
+  .sort({ dateAdded: 1 })
   .exec()
   .then((matchResults) => {
       // create a local variable for the view to access the DB results
@@ -50,8 +50,26 @@ router.post('/matches',(req,res,next)=>{
     res.redirect('/login');
     return;
   }
-  console.log(req.user);
 
+  console.log(req.body.signupPlayers);
+  console.log("names");
+  console.log(req.body.signupPlayers.name);
+  console.log('points:');
+  console.log(req.body.signupPlayers.points);
+
+
+
+
+  // playersarray = [
+  //   {
+  //     name: "Test1",
+  //     points: 1
+  //   },
+  //   {
+  //     name: "Test2",
+  //     points: 2
+  //   }
+  // ]
   const theMatch= new MatchModel({
     matchName:req.body.matchNewName,
     matchPhoto:req.body.matchImage,
@@ -180,6 +198,20 @@ router.post("/matches/:matchId", (req, res, next) => {
       });
 });
 
+// use this or the POST version of deleting (not both)
+router.get("/matches/:matchId/delete", (req, res, next) => {
+    MatchModel.findByIdAndRemove(req.params.matchId)
+      .then((matchFromDb) => {
+          // redirect to the list of products page
+          // (you can't see the details of a product that isn't in the DB)
+          res.redirect("/matches");
+            // you CAN'T redirect to an EJS file
+            // you can ONLY redirect to a URL
+      })
+      .catch((err) => {
+          next(err);
+      });
+});
 
 
 

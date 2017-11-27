@@ -22,7 +22,7 @@ router.get('/signup',(req,res,next)=>{
 //step 2
 router.post('/process-signup',(req,res,next)=>{
 
-  if(req.body.signupPassword === ""|| req.body.signupPassword.length < 6 || req.body.signupPassword.match(/[^a-z0-9]/i)===null)
+  if(req.body.signupPassword === ""|| req.body.signupPassword.length < 2 || req.body.signupPassword.match(/[^a-z0-9]/i)===null)
   {
     res.locals.errorMessage= "password is invalid";
     res.render("team-views/signup-page");
