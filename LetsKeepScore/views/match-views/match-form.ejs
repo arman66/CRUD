@@ -16,17 +16,19 @@
   <br />
 
 
-  <%# <label for="match-players-input">Players</label>
-  <input id="match-players-input" type="text" name="signupPlayers" value="">%>
+
 
   <div id="dynamicInput">
-     Player 1<br><input type="text" name="signupPlayers">
+     <%# Player dynamically added<br><input type="text" name="signupPlayers"><br />
+     Player Points<br> <input  id="match-points-input" type="number" name="playerPoints" />%>
+
   </div>
-  <input type="button" value="Add another text input" onClick="addInput('dynamicInput');">
+
+<input class="waves-effect waves-light btn" type="button" value="Add another Player" onClick="addInput('dynamicInput');">
 
 
 
-  <button>Create Match</button>
+  <button class="waves-effect waves-light btn">Create Match</button>
 </form>
 
 

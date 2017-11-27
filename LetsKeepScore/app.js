@@ -7,6 +7,9 @@ const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
 const passport=require('passport');
 const session= require('express-session');
+
+// load environment variables fromt eh .env file
+require('dotenv').config();
 //run thte code that sets up the mongoose database conection
 require('./config/mongoose-setup');
 require('./config/passport-setup');
@@ -19,7 +22,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // default value for title local
-app.locals.title = 'Lets----Keep----Score';
+app.locals.title = 'Lets--Keep--Score';
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));

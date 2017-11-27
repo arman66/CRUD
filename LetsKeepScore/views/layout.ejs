@@ -3,22 +3,43 @@
   <head>
     <meta charset="utf-8">
     <title><%= title %></title>
-    <!-- BOOTSTRAP LINKS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- materialize LINKS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
-    <header>
-      <h2> Welcome to my app</h2>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/signup">Sign Up</a>
-        <a href="/login">Log In</a>
-      </nav>
-    </header>
-  <%- body %>
 
+    <!-- Dropdown Structure -->
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="/login">Log In</a></li>
+      <li><a href="/signup">Sign Up</a></li>
+      <li class="divider"></li>
+      <li><a href="#!">Matches</a></li>
+    </ul>
+    <nav>
+      <div class="nav-wrapper teal lighten-2">
+        <a href="/" class="brand-logo">Keep Score</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="/login">Log In</a></li>
+          <li><a href="/signup">Sign Up</a></li>
+          <!-- Dropdown Trigger -->
+          <li>
+            <a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons right">dehaze</i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+    </header>
+<main>
+  <div class="container">
+
+
+  <%- body %>
+</div>
+</main>
 
 
 
@@ -29,8 +50,10 @@
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
-<!-- BOOTSTRAP script LINKS -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- materialize LINKS -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
 <!-- YOOUR JS LINKS -->
 <script src="/javascripts/script.js" charset="utf-8"></script>
   </body>

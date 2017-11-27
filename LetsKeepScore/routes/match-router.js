@@ -12,16 +12,10 @@ const router  = express.Router();
 
 //step 1 whot eht sign up form
 router.get('/matches',(req,res,next)=>{
+console.log('================',req.user._id);
   MatchModel
-
   .find(
-  // {owner: req.user._id},
-  // (err,listOfMatches)=>{
-  //   if(err){
-  //     next(err);
-  //     return;
-  //   }
-  // }
+  {owner: req.user._id}
   )
   .limit(25)
   .sort({ dateAdded: -1 })
@@ -29,7 +23,7 @@ router.get('/matches',(req,res,next)=>{
   .then((matchResults) => {
       // create a local variable for the view to access the DB results
       res.locals.listOfMatches = matchResults;
-
+// console.log('the list ==========', listOfMatches);
       // render only after the results have been retrieved
       // (the "then()" callback)
       res.render('match-views/match-list');
@@ -62,7 +56,13 @@ router.post('/matches',(req,res,next)=>{
     matchName:req.body.matchNewName,
     matchPhoto:req.body.matchImage,
     matchType:req.body.matchNewType,
-    matchPlayers: req.body.signupPlayers
+    matchPlayers: {
+      name: req.body.signupPlayers,
+      points: req.body.playerPoints
+    },
+    owner: req.user,
+
+
     //req.user is teh logged in users document (defined by Passport)
     //owner: req.user._id
   });
@@ -143,7 +143,10 @@ router.post("/matches/:matchId", (req, res, next) => {
               matchName:        req.body.matchName,
               matchType:       req.body.matchType,
               matchPhoto:    req.body.matchPhoto,
-              matchPlayers: req.body.matchPlayers
+              matchPlayers: {
+                name: req.body.signupPlayers,
+                points: req.body.playerPoints
+              }
           }); // |                        |
               // fields from         names of the
               // model's schema      input tags

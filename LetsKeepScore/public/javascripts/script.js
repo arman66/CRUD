@@ -1,6 +1,11 @@
 console.log('connected');
 
-var counter = 1;
+
+  $(document).ready(() => {
+  $(".dropdown-button").dropdown();
+  });
+
+var counter = 0;
 var limit = 10;
 function addInput(divName){
      if (counter == limit)  {
@@ -8,8 +13,12 @@ function addInput(divName){
      }
      else {
           var newdiv = document.createElement('div');
-          newdiv.innerHTML = "Player " + (counter + 1) + " <br><input type='text' name='signupPlayers'>";
+          newdiv.innerHTML = "Player " + (counter + 1) + " <br><input type='text' name='signupPlayers'> - has <input type='number' name='playerPoints'> points";
           document.getElementById(divName).appendChild(newdiv);
+
+
+
           counter++;
+
      }
 }

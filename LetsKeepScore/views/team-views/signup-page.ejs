@@ -1,10 +1,11 @@
-<h2>lets signup your team</h2>
+
 
 
 <% if (typeof(errorMessage) != "undefined") { %>
   <div class="error-message"><%= errorMessage %></div>
 <% } %>
 
+<h3>Sign up Your Team</h3>
 
 <form id= "form" class="" action="process-signup" method="post">
 
@@ -16,7 +17,7 @@
   <input id="password-input" type="password" name="signupPassword" value="">
 
 
-  <button>Sign Up</button>
+  <button class="waves-effect waves-light btn">Sign Up</button>
 </form>
 <p>
   already have and account?

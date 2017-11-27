@@ -4,23 +4,26 @@
   <p>Hello , <%=currentUser.teamName%></p>
 <%}%>
 
-<a href="matches/new">Create new Match</a>
 
+<a href ="matches/new" class="waves-effect waves-light btn">Create Match</a>
+
+
+
+<% listOfMatches %>
 <ul>
   <% listOfMatches.forEach((oneMatch) => { %>
     <li>
       <h3> <%= oneMatch.matchName %> </h3>
-      <p> <%= oneMatch.matchPlayers %> </p>
+      <p> <%= oneMatch.matchPlayers.name %> </p>
+        <p> <%= oneMatch.matchPlayers.points %> </p>
       <img src="<%= oneMatch.matchPhoto %>" />
 
       <ul>
         <li>
-          <a href="/matches/details/<%= oneMatch._id %>">
-            View Details
-          </a>
-          <a href="/matches/<%= oneMatch._id %>/edit">
-            Edit
-          </a>
+          <a href ="/matches/details/<%= oneMatch._id %>" class="waves-effect waves-light btn">View Details</a>
+
+          <a href ="/matches/<%= oneMatch._id %>/edit" class="waves-effect waves-light btn">Edit</a>
+
         </li>
 
         </ul>

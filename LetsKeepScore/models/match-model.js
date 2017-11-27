@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const Schema= mongoose.Schema;
-const Team = require('./team-model.js');
+const TeamModel = require('./team-model.js');
 
 // new schema({schema},{settings})
 const matchSchema= new Schema(
@@ -18,27 +18,21 @@ const matchSchema= new Schema(
       required: [true, 'tell us your match type']
     },
     matchPlayers:
-    {
+    {name: [{ type: String}],
 
-        type: [{type: String}],
-        required: [true, 'tell us your match Name']
+    points:{ type: Number, default: 0}
 
       },
-      points:{
-        type: Number
-      },
-
 
     matchPhoto:
     {
       type: String,
       required: [true, 'tell us your photo URL']
     },
-    owner:
-    {
-      type: Schema.Types.ObjectId
+    owner: {
+      type: Schema.Types.ObjectId,
+      // required: [true, 'Rooms need an owner']
     },
-
 
 
     },
