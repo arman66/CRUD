@@ -74,10 +74,7 @@ router.post('/matches',(req,res,next)=>{
     matchName:req.body.matchNewName,
     matchPhoto:req.body.matchImage,
     matchType:req.body.matchNewType,
-    matchPlayers: {
-      name: req.body.signupPlayers,
-      points: req.body.playerPoints
-    },
+    matchPlayers: req.body.signupPlayers,
     owner: req.user,
 
 
