@@ -1,4 +1,4 @@
-<h2>Edit your match here</h2>
+<h2>Edit Match</h2>
 
 <!-- weird if statement with "typeof" to avoid an error -->
 <% if (typeof validationErrors !== "undefined") { %>
@@ -28,9 +28,11 @@
   <br />
   <label for="match-players-input"> Match Players </label>
   <input  id="match-players-input" type="text"
-      name="matchPlayers" value="<%= matchDetails.matchPlayers %>" />
+      name="matchPlayers" value="<%= matchDetails.matchPlayers.name %>" />
   <br />
 
 
   <button class="waves-effect waves-light btn" > Save Changes </button>
 </form>
+
+<a href="/matches" class="waves-effect waves-teal btn-flat"><--Back</a>

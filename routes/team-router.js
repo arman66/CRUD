@@ -82,7 +82,7 @@ router.post('/process-login',(req,res,next)=>{
   .then((teamFromDb)=>{
     if(teamFromDb === null)
     {
-      res.locals.errorMessage="email incorrect";
+      res.locals.errorMessage="username incorrect";
       res.render("team-views/login-page");
       return;
     }
@@ -107,7 +107,7 @@ router.post('/process-login',(req,res,next)=>{
       }
       else
       {
-        res.redirect('/matches');
+        res.redirect('/');
       }
 
     });

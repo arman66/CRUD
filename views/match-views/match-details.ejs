@@ -2,10 +2,12 @@
 
 <h3> <%= matchDetails.matchName %> </h3>
 
-<p> TYPE: <%= matchDetails.matchType %> </p>
+<p>  <%= matchDetails.matchType %> </p>
 
-<p> <%= matchDetails.matchPlayers.name %> </p>
-<p> <%= matchDetails.matchPlayers.points %> </p>
+<%matchDetails.matchPlayers.forEach((player)=>{%>
+  <p> <%= player.name %> <%= player.points %>  </p>
+
+  <%})%>
 
 <img src="<%= matchDetails.matchPhoto %>" />
 

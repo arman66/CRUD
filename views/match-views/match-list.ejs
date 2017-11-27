@@ -1,4 +1,4 @@
-<h2>here are your matches</h2>
+<h2>Your Matches</h2>
 
 <%if(currentUser){%>
   <p>Hello , <%=currentUser.teamName%></p>
@@ -16,8 +16,11 @@
       <h3> <%= oneMatch.matchName %> </h3>
 
       <%oneMatch.matchPlayers.forEach((player)=>{%>
-        <p> <%= player.name %> </p>
-        <p> <%= player.points %> </p>
+        <p> <%= player.name %> <%= player.points %>  </p>
+
+      <p>Matches Played:
+      <%=player.points+= player.points %>
+      </p>
 
       <%})%>
 
