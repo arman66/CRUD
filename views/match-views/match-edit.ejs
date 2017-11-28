@@ -17,19 +17,21 @@
   <input  id="match-name-input" type="text"
       name="matchName" value="<%= matchDetails.matchName %>" />
   <br />
-  <label for="match-type-input"> Match Type</label>
-  <input  id="match-type-input" type="text"
-      name="matchType" value="<%= matchDetails.matchType %>" />
-  <br />
+
 
   <label for="match-image-input"> Match Photo </label>
   <input  id="match-image-input" type="text"
       name="matchPhoto" value="<%= matchDetails.matchPhoto %>" />
   <br />
-  <label for="match-players-input"> Match Players </label>
-  <input  id="match-players-input" type="text"
-      name="matchPlayers" value="<%= matchDetails.matchPlayers.name %>" />
-  <br />
+
+
+  <%matchDetails.matchPlayers.forEach((player, i)=>{%>
+    <p>
+    <label for="match-points-input"> <%= player.name %> </label>
+    <input  id="match-points-input" type="text" name="signupPlayers[<%=i%>][points]" value="<%= player.points%>" />
+    <input type="hidden" name="signupPlayers[<%=i%>][name]" value="<%= player.name%>" />
+
+    <%})%>
 
 
   <button class="waves-effect waves-light btn" > Save Changes </button>

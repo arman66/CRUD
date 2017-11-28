@@ -14,7 +14,7 @@ function addInput(divName){
      }
      else {
           var newdiv = document.createElement('div');
-          newdiv.innerHTML = "Player " + (counter + 1) + " <br><input type='text' name='signupPlayers["+ counter +"][name]'> - has <input type='number' name='signupPlayers["+ counter +"][points]'> points";
+          newdiv.innerHTML = "Player " + (counter + 1) + " <br><input type='text' name='signupPlayers["+ counter +"][name]'> - # of Matches Won <input type='number' name='signupPlayers["+ counter +"][points]'>";
           document.getElementById(divName).appendChild(newdiv);
 
 

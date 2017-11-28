@@ -10,3 +10,15 @@ a {
 h2{
   text-align: center;
 }
+
+
+p{
+  font-size: 18px;
+}
+
+
+.dynamic{
+
+  font-size: 14px;
+  color: grey;
+}

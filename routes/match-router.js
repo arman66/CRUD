@@ -162,12 +162,12 @@ router.post("/matches/:matchId", (req, res, next) => {
           // update the document
           matchFromDb.set({
               matchName:        req.body.matchName,
-              matchType:       req.body.matchType,
               matchPhoto:    req.body.matchPhoto,
-              matchPlayers: {
-                name: req.body.signupPlayers,
-                points: req.body.playerPoints
-              }
+              matchPlayers:  req.body.signupPlayers
+
+
+
+
           }); // |                        |
               // fields from         names of the
               // model's schema      input tags
