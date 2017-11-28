@@ -10,6 +10,8 @@ const MatchModel= require('../models/match-model');
 const router  = express.Router();
 
 
+
+
 //step 1 whot eht sign up form
 router.get('/matches',(req,res,next)=>{
 console.log('================',req.user._id);
@@ -35,12 +37,16 @@ console.log('================',req.user._id);
 });
 
 
+
+
+
+
 router.get('/matches/new', (req,res,next)=>{
-  //redirec to log in if there is no logged in user
-  // if(req.user === undefined){
-  //   res.redirect('/login');
-  //   return;
-  // }
+  // redirec to log in if there is no logged in user
+  if(req.user === undefined){
+    res.redirect('/login');
+    return;
+  }
   res.render('match-views/match-form');
 });
 
@@ -194,6 +200,37 @@ router.post("/matches/:matchId", (req, res, next) => {
           }
       });
 });
+
+
+//this routes displays the Stats
+router.get('/match/stats',(req,res,next)=>{
+
+
+
+  MatchModel
+  .find(
+  {owner: req.user._id}
+  )
+  .limit(25)
+  .sort({ dateAdded: 1 })
+  .exec()
+  .then((matchResults) => {
+      // create a local variable for the view to access the DB results
+      res.locals.listOfMatches = matchResults;
+  // console.log('the list ==========', listOfMatches);
+      // render only after the results have been retrieved
+      // (the "then()" callback)
+      res.render('match-views/match-stats');
+  })
+  .catch((err) => {
+      // render the error page with our error
+      next(err);
+  });
+});
+
+
+
+
 
 // use this or the POST version of deleting (not both)
 router.get("/matches/:matchId/delete", (req, res, next) => {

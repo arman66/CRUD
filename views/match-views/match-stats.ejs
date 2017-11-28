@@ -1,0 +1,40 @@
+<h2>Stats</h2>
+<%if(currentUser){%>
+  <p>Hello , <%=currentUser.teamName%></p>
+<%}%>
+
+
+<table class="highlight">
+  <% listOfMatches.forEach((oneMatch) => { %>
+   <thead>
+     <tr>
+         <th><%= oneMatch.matchName %> </th>
+         <th>Player Name</th>
+         <th>Matches Won</th>
+
+     </tr>
+   </thead>
+  <%oneMatch.matchPlayers.forEach((player)=>{%>
+   <tbody>
+     <tr>
+       <td></td>
+       <td><%= player.name %></td>
+       <td><%= player.points %></td>
+     </tr>
+     <tr>
+       <td></td>
+       <td><%= player.name %></td>
+       <td><%= player.points %></td>
+     </tr>
+     <tr>
+       <td></td>
+       <td><%= player.name %></td>
+       <td><%= player.points %></td>
+     </tr>
+     <%})%>
+   </tbody>
+
+
+
+   <% }) %>
+ </table>
